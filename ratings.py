@@ -30,26 +30,37 @@ def get_top_n(predictions, n=10):
 
     return top_n
 
-conn = sqlite3.connect('database/anime_storage')
+def get_recommendation(user):
 
-df = pd.read_sql_query('SELECT * FROM USERS', conn)
+    conn = sqlite3.connect('database/anime_storage')
 
-conn.close()
+    df = pd.read_sql_query('SELECT * FROM USERS', conn)
 
-data = Dataset.load_from_df(df,Reader())
+    conn.close()
 
-data.split(n_folds=10)
-algo = SVD()
+    # Anime can be rated from 1 - 10
+    data = Dataset.load_from_df(df,Reader(rating_scale=(1,10)))
 
-trainset = data.build_full_trainset()
-algo.train(trainset)
+    data.split(n_folds=10)
+    algo = SVD()
 
-# predict ratings for all pairs (user, score) that are NOT in the train set
-testset = trainset.build_anti_testset()
-predictions = algo.test(testset)
+    trainset = data.build_full_trainset()
+    algo.train(trainset)
 
-top_n = get_top_n(predictions, n=10)
+    # predict ratings for all pairs (user, score) that are NOT in the train set
+    testset = trainset.build_anti_testset()
+    predictions = algo.test(testset)
 
-for uid, user_ratings in top_n.items():
-    print(uid, [iid for (iid, _) in user_ratings])
-    print()
+    # Get top 15 predictions
+    top_n = get_top_n(predictions, n=10)
+
+    # User is not on MAL/Database
+    # Needs to move to top of method to be faster
+    if(user not in top_n):
+        print(user + ' not found in database')
+        return
+
+    print(user, [iid for (iid, _) in top_n.get(user)])
+
+    #for uid, user_ratings in top_n.items():
+    #   print(uid, [iid for (iid, _) in user_ratings])
