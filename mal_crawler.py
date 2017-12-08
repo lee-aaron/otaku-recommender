@@ -73,7 +73,7 @@ def write_to_db(user, animelist):
     anime = Database()
     anime.create_table()
     for a in animelist:
-        if a.get("score") <= 5:
+        if a.get("score") == 0:
             continue
         anime.write(user,a.get("anime_title"),a.get("score"))
     anime.close()
@@ -83,7 +83,7 @@ def write_to_db2(user, animelist):
     anime = Database()
     anime.create_table()
     for a in animelist:
-        if int(a.my_score.text) <= 5:
+        if int(a.my_score.text) == 0:
             continue
         anime.write(user,a.series_title.text,int(a.my_score.text))
     anime.close()
@@ -101,6 +101,3 @@ def crawl(request_delay, iterations):
             # (user,) parameterizes the string instead of making it a tuple
             thread = threading.Thread(target=download_list,args=(user,))
             thread.start()
-
-if __name__ == "__main__":
-    crawl(1, 20)
