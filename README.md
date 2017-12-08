@@ -16,15 +16,13 @@ Please read [FAQ](faq.md) before reporting bugs/suggestions and learning how to 
 
 ## Libraries/Tools
 
-- sqlite3 for database
-- beautifulsoup4 for scraping MAL
-- lxml for parsing HTML documents
-- json for sorting user data
-- threading for writing to database
-- scipy 
+- sqlite3 - database
+- beautifulsoup4 - scraping MAL
+- lxml - parsing HTML documents
+- json - sorting user data
+- threading - writing to database
 - numpy
 - pandas
-- sklearn
 - surprise
 
 ## Planned Updates
@@ -38,4 +36,5 @@ Please read [FAQ](faq.md) before reporting bugs/suggestions and learning how to 
 Please consider donating to poor college students. :)
 
 Bitcoin: `1Ka8e2rK9d2Hywgy1zbSQtFyR6m8mjyBf`
+
 Ethereum: `0x8c970fBCD825D7a08A914BaA5d8b85660D222078`

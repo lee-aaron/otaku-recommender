@@ -11,6 +11,7 @@ The program scrapes MyAnimeList for users and will write it to a database. We th
 ## Issue Posting
 
 Title: `Bug: ` or `Suggestion: ` etc.
+
 Content: If you are reporting a bug, please provide a screenshot of the stack trace error or what exactly went wrong. If you have a suggestion, please provide drawings or detailed descriptions of what you would like to see. Do note that we are busy and it will take a while to implement additional functionality.
 
 ## Usage
