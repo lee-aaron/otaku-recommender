@@ -6,7 +6,7 @@ Two poor college students
 
 ## How does it work?
 
-The program scrapes MyAnimeList for users and will write it to a database. We then use ML/DL to generate a recommendation using two common approaches.
+The program scrapes MyAnimeList for users and will write it to a database on GCP. We then use ML/DL to generate a recommendation using two common approaches.
 
 ## Issue Posting
 

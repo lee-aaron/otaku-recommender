@@ -25,9 +25,11 @@ Please read [FAQ](faq.md) before reporting bugs/suggestions and learning how to 
 - numpy - required by surprise
 - pandas - data transform from database
 - surprise - generate recommendations
+- [Full Stack](full_stack.md) on Google Cloud Platform
 
 ## Planned Updates
 
+- Improve Collaborative Recommendation
 - Implement Content-Based Recommendation
 - Implement Hybrid Recommendation
 - Transfer database to AWS/GCP
