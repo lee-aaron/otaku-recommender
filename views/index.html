@@ -11,13 +11,42 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
-<body background="/img/index.jpg">
+<body>
+
+    <img class="img-responsive bg-img" src="/img/index.jpg" alt="Anime Picture">
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        <!-- Brand -->
+        <a class="navbar-brand" href="/">Otaku Recommender</a>
+      
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/donate">Donate</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact</a>
+            </li> 
+          </ul>
+        </div> 
+      </nav>
+
 
     <div class="container text-center" style="position:relative;top:7cm;width:40%">
-        <h1 class="d-flex justify-content-center align-items-center rounded border border-dark px-2 py-2" style="color:salmon">
+        <h1 class="d-flex justify-content-center align-items-center rounded border border-light px-2 py-2" style="color:white">
             Welcome to Otaku Recommender!
         </h1>
-        <input type="button" class="btn btn-outline-light spacing" onclick="window.location='anime-recommendation';" value="Click here to get Started!" />
+        <input type="button" class="btn btn-outline-light spacing" onclick="window.location='anime-recommendation';" value="Click here to get Started!"
+        />
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
