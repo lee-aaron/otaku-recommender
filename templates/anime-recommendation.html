@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -8,45 +8,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 
 <body>
 
-    <img class="img-responsive bg-img" src="/img/index.jpg" alt="Anime Picture">
+    <img class="img-responsive bg-img" src="{{ url_for('static', filename='img/anime.jpg') }}" alt="Anime Picture">
 
-    <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #e3f2fd;">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
         <!-- Brand -->
         <a class="navbar-brand" href="/">Otaku Recommender</a>
-      
+
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
-      
+
         <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/donate">Donate</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/contact">Contact</a>
-            </li> 
-          </ul>
-        </div> 
-      </nav>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/donate">Donate</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-
-    <div class="container text-center" style="position:relative;top:7cm;width:40%">
-        <h1 class="d-flex justify-content-center align-items-center rounded border border-light px-2 py-2" style="color:white">
-            Welcome to Otaku Recommender!
-        </h1>
-        <input type="button" class="btn btn-outline-light spacing" onclick="window.location='anime-recommendation';" value="Click here to get Started!"
-        />
+    <div class="container text-center" style="color:white;position:relative;top:40%">
+        <p>Please enter your MyAnimeList username!</p>
+        <form class="form-inline justify-content-center">
+            <input class="form-control mr-sm-2" type="text" name="username" placeholder="Bob">
+            <button class="btn btn-success" type="submit">Recommend Me!</button>
+        </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

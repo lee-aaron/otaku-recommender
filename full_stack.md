@@ -2,9 +2,8 @@
 
 ## Core Concept
 
-- Bootstrap + HTML + CSS + JS - Front End
-- Express framework
-- Node.js - call python scripts for backend
+- Front End: Bootstrap, HTML, CSS, Flask
+- Back End: python
 
 ## Database
 
