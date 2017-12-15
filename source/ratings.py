@@ -56,8 +56,8 @@ def get_recommendation(user):
 
     # User is not on MAL/Database
     # Needs to move to top of method to be faster
-    if(user not in top_n):
-        print(user + ' not found in database')
+    if user not in top_n:
+        print user + ' not found in database'
         return
 
     print(user, [iid for (iid, _) in top_n.get(user)])

@@ -1,12 +1,12 @@
+#!/usr/bin/python3
+
 """ MyAnimeList Crawler Python 3.6 """
-import os
 import threading
 from time import sleep
 import json
 from bs4 import BeautifulSoup
 import requests
 from database import Database
-import threading
 
 def get_url(usr):
     """ Returns Anime List URL """
@@ -75,7 +75,7 @@ def write_to_db(user, animelist):
     for a in animelist:
         if a.get("score") == 0:
             continue
-        anime.write(user,a.get("anime_title"),a.get("score"))
+        anime.write(user, a.get("anime_title"), a.get("score"))
     anime.close()
 
 def write_to_db2(user, animelist):
@@ -85,7 +85,7 @@ def write_to_db2(user, animelist):
     for a in animelist:
         if int(a.my_score.text) == 0:
             continue
-        anime.write(user,a.series_title.text,int(a.my_score.text))
+        anime.write(user, a.series_title.text, int(a.my_score.text))
     anime.close()
 
 def crawl(request_delay, iterations):
@@ -99,5 +99,5 @@ def crawl(request_delay, iterations):
         for user in users:
             sleep(request_delay)
             # (user,) parameterizes the string instead of making it a tuple
-            thread = threading.Thread(target=download_list,args=(user,))
+            thread = threading.Thread(target=download_list, args=(user,))
             thread.start()

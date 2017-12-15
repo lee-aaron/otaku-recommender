@@ -1,4 +1,5 @@
 var express = require('express');
+var api = require('./config/api.js').api;
 var app = express();
 var path = require('path');
 
@@ -17,6 +18,11 @@ app.get('/anime-recommendation', (req, res) => {
 // Route to about
 app.get('/about', (req, res) => {
   res.sendFile(__dirname + '/views/about.html');
+});
+
+// Route to Big Query
+app.get('/api', (req, res) => {
+  //res.send(api.getList());
 });
 
 // Route to 404
