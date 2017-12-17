@@ -7,4 +7,4 @@
 
 ## Database
 
-We use BigQuery from GCP to store our data
+We use RDS MySQL from AWS to store our data

@@ -12,7 +12,6 @@ class Database:
         # CREATE TABLE IF NOT EXISTS USERS (USERHASH VARCHAR(191), ANIME VARCHAR(191), SCORE INT(10), UNIQUE (USERHASH, ANIME));
 
     def write(self, username, anime, score):
-        # Use utf8mb4 
         try:
             if(type(anime) is str and anime.find('"') != -1):
                 self.cursor.execute("REPLACE INTO USERS VALUES ('{}','{}','{}')".format(username,anime,score))
