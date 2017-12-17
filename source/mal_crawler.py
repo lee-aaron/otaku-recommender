@@ -6,7 +6,7 @@ from time import sleep
 import json
 from bs4 import BeautifulSoup
 import requests
-from database import Database
+from source.database import Database
 
 def get_url(usr):
     """ Returns Anime List URL """
@@ -71,7 +71,6 @@ def get_animelist_2(user):
 def write_to_db(user, animelist):
     """ Writes to database and puts in info """
     anime = Database()
-    anime.create_table()
     for a in animelist:
         if a.get("score") == 0:
             continue
@@ -81,7 +80,6 @@ def write_to_db(user, animelist):
 def write_to_db2(user, animelist):
     """ Writes to database and puts in info """
     anime = Database()
-    anime.create_table()
     for a in animelist:
         if int(a.my_score.text) == 0:
             continue

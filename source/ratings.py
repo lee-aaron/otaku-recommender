@@ -1,4 +1,4 @@
-import sqlite3
+import pymysql
 import pandas as pd
 from surprise import Reader, Dataset
 from surprise import SVD, evaluate
@@ -32,7 +32,8 @@ def get_top_n(predictions, n=10):
 
 def get_recommendation(user):
 
-    conn = sqlite3.connect('database/anime_storage')
+    conn = pymysql.connect("anime-storage.cfavnxuxzcws.us-east-1.rds.amazonaws.com",
+            "admin","mahouka-magic","anime_storage")
 
     df = pd.read_sql_query('SELECT * FROM USERS', conn)
 
@@ -57,10 +58,11 @@ def get_recommendation(user):
     # User is not on MAL/Database
     # Needs to move to top of method to be faster
     if user not in top_n:
-        print user + ' not found in database'
+        print(user + ' not found in database')
         return
 
-    print(user, [iid for (iid, _) in top_n.get(user)])
+    return [top_n.get(user)]
+    # print(user, [iid for (iid, _) in top_n.get(user)])
 
     #for uid, user_ratings in top_n.items():
     #   print(uid, [iid for (iid, _) in user_ratings])

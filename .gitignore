@@ -18,6 +18,7 @@
 *.sublime-workspace
 
 # IDE - VSCode
+/.vscode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -33,6 +34,9 @@ npm-debug.log
 testem.log
 /typings
 /env
+*.json
+/source/__*
+/source/anime_storage
 
 # e2e
 /e2e/*.js

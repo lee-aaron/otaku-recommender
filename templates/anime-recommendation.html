@@ -43,7 +43,8 @@
     <div class="container text-center" style="color:white;position:relative;top:40%">
         <p>Please enter your MyAnimeList username!</p>
         <form class="form-inline justify-content-center">
-            <input class="form-control mr-sm-2" type="text" name="username" placeholder="Bob">
+            <!-- Makes the text field a requirement before hitting enter or the submit button -->
+            <input class="form-control mr-sm-2" name="username" placeholder="Bob" type="text" required /><br />
             <button class="btn btn-success" type="submit">Recommend Me!</button>
         </form>
     </div>

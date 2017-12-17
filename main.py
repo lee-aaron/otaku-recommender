@@ -2,10 +2,11 @@
 import logging
 
 from flask import Flask, render_template, request
-
+from flask.json import jsonify
+import source.ratings as ratings
+import source.mal_crawler as mal_crawler
 
 app = Flask(__name__)
-
 
 @app.route('/')
 def main():
@@ -15,12 +16,7 @@ def main():
 @app.route('/anime-recommendation')
 def anime_recommendation():
     """Return anime recommendation."""
-    # Figure out a way to separate the GET request if form has no input
     return render_template('anime-recommendation.html')
-
-@app.route('/anime-recommendation-test')
-def anime_recommendation_test():
-    """Return anime recommendation."""
 
 @app.route('/about')
 def about():

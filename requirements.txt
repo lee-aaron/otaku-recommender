@@ -1,2 +1,10 @@
+wheel==0.30.0
 Flask==0.12.2
 gunicorn==19.7.1
+bs4==0.0.1
+pandas==0.21.1
+numpy==1.13.3
+lxml==4.1.1
+pymysql==0.7.11
+scikit-surprise==1.0.4
+google-api-python-client
