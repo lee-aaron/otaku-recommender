@@ -17,7 +17,6 @@ Please read [FAQ](faq.md) before reporting bugs/suggestions and learning how to 
 
 ## Libraries/Tools
 
-- sqlite3 - database
 - beautifulsoup4 - scraping MAL
 - lxml - parsing HTML documents
 - json - sorting user data
@@ -29,12 +28,12 @@ Please read [FAQ](faq.md) before reporting bugs/suggestions and learning how to 
 
 ## Planned Updates
 
-- Improve Collaborative Recommendation
-- Implement Content-Based Recommendation
-- Implement Hybrid Recommendation
-- Transfer database to AWS/GCP
-- Create a website
-- Create an app
+- [ ] Improve Collaborative Recommendation
+- [ ] Implement Content-Based Recommendation
+- [ ] Implement Hybrid Recommendation
+- [x] Transfer database to AWS
+- [ ] Create a website
+- [ ] Create an app
 
 ## Donate
 

@@ -3,8 +3,8 @@ import logging
 
 from flask import Flask, render_template, request
 from flask.json import jsonify
-import source.ratings as ratings
-import source.mal_crawler as mal_crawler
+# import source.ratings as ratings
+# import source.mal_crawler as mal_crawler
 
 app = Flask(__name__)
 
