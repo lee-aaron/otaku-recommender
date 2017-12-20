@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import pymysql
-import account
+from source.account import Account
 
 class Database:
 

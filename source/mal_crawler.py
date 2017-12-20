@@ -36,12 +36,15 @@ def get_recent_users():
 def download_list(user):
     """ Downloads anime list per user and writes to path """
     animelist = get_animelist(user)
-    if animelist is not None:
+    if animelist is not None and len(animelist) != 0:
         write_to_db(user, animelist)
+        return "Found"
     else:
         animelist2 = get_animelist_2(user)
-        if animelist2 is not None:
+        if animelist2 is not None and len(str(animelist2)) > 2:
             write_to_db2(user, animelist2)
+            return "Found"
+    return
 
 def get_animelist(user):
     """ Gets animelist from string user """

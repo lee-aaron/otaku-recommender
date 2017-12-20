@@ -3,6 +3,7 @@ import pandas as pd
 from surprise import Reader, Dataset
 from surprise import SVD, evaluate
 from collections import defaultdict
+from source.account import Account
 
 def get_top_n(predictions, n=10):
     '''Return the top-N recommendation for each user from a set of predictions.
@@ -32,8 +33,10 @@ def get_top_n(predictions, n=10):
 
 def get_recommendation(user):
 
-    conn = pymysql.connect("anime-storage.cfavnxuxzcws.us-east-1.rds.amazonaws.com",
-            "admin","mahouka-magic","anime_storage")
+    a = Account()
+
+    conn = pymysql.connect(a.getLink(),
+            a.getUser(),a.getPass(),a.getDB())
 
     df = pd.read_sql_query('SELECT * FROM USERS', conn)
 
@@ -53,15 +56,9 @@ def get_recommendation(user):
     predictions = algo.test(testset)
 
     # Get top 15 predictions
-    top_n = get_top_n(predictions, n=10)
+    top_n = get_top_n(predictions, n=15)
 
-    # User is not on MAL/Database
-    # Needs to move to top of method to be faster
-    if user not in top_n:
-        print(user + ' not found in database')
-        return
-
-    return [top_n.get(user)]
+    return [iid for (iid, _) in top_n.get(user)]
     # print(user, [iid for (iid, _) in top_n.get(user)])
 
     #for uid, user_ratings in top_n.items():
