@@ -6,7 +6,7 @@ from time import sleep
 import json
 from bs4 import BeautifulSoup
 import requests
-from source.database import Database
+from database import Database
 
 def get_url(usr):
     """ Returns Anime List URL """
@@ -44,7 +44,7 @@ def download_list(user):
         if animelist2 is not None and len(str(animelist2)) > 2:
             write_to_db2(user, animelist2)
             return "Found"
-    return
+    return "Not Found"
 
 def get_animelist(user):
     """ Gets animelist from string user """

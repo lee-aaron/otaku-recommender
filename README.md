@@ -23,7 +23,7 @@ Please read [FAQ](faq.md) before reporting bugs/suggestions and learning how to 
 - threading - writing to database
 - numpy - required by surprise
 - pandas - data transform from database
-- surprise - generate recommendations
+- surprise - generate recommendations / switching to using keras and tensorflow
 - [Full Stack](full_stack.md) on Google Cloud Platform
 
 ## Planned Updates
@@ -32,12 +32,12 @@ Please read [FAQ](faq.md) before reporting bugs/suggestions and learning how to 
 - [ ] Implement Content-Based Recommendation
 - [ ] Implement Hybrid Recommendation
 - [x] Transfer database to AWS
-- [ ] Create a website
+- [x] Create a website
 - [ ] Create an app
 
 ## Donate
 
-Please consider donating to poor college students. :)
+Please consider donating to a poor college student :)
 
 Bitcoin: `1Ka8e2rK9d2Hywgy1zbSQtFyR6m8mjyBf`
 

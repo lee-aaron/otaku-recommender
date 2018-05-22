@@ -2,7 +2,7 @@
 
 ## Who are the project owners?
 
-Two poor college students
+A poor college student who is majoring in Computer Science @ UCSD.
 
 ## How does it work?
 

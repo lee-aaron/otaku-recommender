@@ -37,6 +37,8 @@ testem.log
 *.json
 /source/__*
 /source/account.py
+/source/__pycache__
+/source/*.pyc
 
 # e2e
 /e2e/*.js
