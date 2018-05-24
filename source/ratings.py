@@ -3,7 +3,7 @@ import pandas as pd
 from surprise import Reader, Dataset
 from surprise import SVD, evaluate
 from collections import defaultdict
-from source.account import Account
+from account import Account
 
 def get_top_n(predictions, n=10):
     '''Return the top-N recommendation for each user from a set of predictions.
@@ -33,10 +33,8 @@ def get_top_n(predictions, n=10):
 
 def get_recommendation(user):
 
-    a = Account()
-
-    conn = pymysql.connect(a.getLink(),
-            a.getUser(),a.getPass(),a.getDB())
+    conn = pymysql.connect(Account.link,
+        Account.user, Account.password, Account.db)
 
     df = pd.read_sql_query('SELECT * FROM USERS', conn)
 

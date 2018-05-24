@@ -11,6 +11,7 @@ class Database:
         self.cursor = self.db.cursor()
         # Use below line in MySQL to create the table
         # CREATE TABLE IF NOT EXISTS USERS (USERHASH VARCHAR(191), ANIME VARCHAR(191), SCORE INT(10), UNIQUE (USERHASH, ANIME));
+        # ALTER TABLE USERS CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
     def write(self, username, anime, score):
         try:
