@@ -1,0 +1,9 @@
+Flask==0.12.2
+gunicorn==19.7.1
+bs4==0.0.1
+pandas==0.21.1
+lxml==4.1.1
+pymysql==0.7.11
+wheel==0.30.0
+surprise==0.1
+requests==2.18.4

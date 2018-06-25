@@ -1,6 +1,6 @@
 # FAQ
 
-## Who are the project owners?
+## Who is the project owner?
 
 A poor college student who is majoring in Computer Science @ UCSD.
 

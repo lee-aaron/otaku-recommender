@@ -1,9 +1,11 @@
+#!/usr/bin/env python2.7
+
 import pymysql
 import pandas as pd
 from surprise import Reader, Dataset
 from surprise import SVD, evaluate
 from collections import defaultdict
-from account import Account
+from source.account import Account
 
 def get_top_n(predictions, n=10):
     '''Return the top-N recommendation for each user from a set of predictions.

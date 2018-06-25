@@ -1,3 +1,4 @@
+#!/usr/bin/env python2.7
 # [START app]
 import logging
 
