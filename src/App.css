@@ -7,6 +7,12 @@
   height: 40vmin;
 }
 
+.search-bar {
+  padding: 15px;
+  float: left;
+  background-color: aqua;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

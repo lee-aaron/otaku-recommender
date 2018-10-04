@@ -1,26 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
 class App extends Component {
   render() {
+    let name = "Otaku Recommender";
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <div className="App">
+          <nav className="search-bar navbar navbar-expand-md navbar-light fixed-top">
+            <Link className="navbar-brand" to="/">
+              <div>{name}</div>
+            </Link>
+          </nav>
+        </div>
+      </Router>
     );
   }
 }
