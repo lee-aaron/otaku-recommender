@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Otaku Recommender
-=======
-# OtakuRecommender
->>>>>>> 261844f91851388a01f9551ebff6a33ef061280e
 
 An Anime Recommender System for when you're out of ideas
 
