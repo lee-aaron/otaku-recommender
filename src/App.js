@@ -3,6 +3,7 @@ import './App.css';
 import './bootstrap.css';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import HomePage from './Home/HomePage';
+import AnimeRecommend from './AnimeRecommend/AnimeRecommend';
 
 function make_link(path, text) {
   return (
@@ -37,7 +38,8 @@ class App extends Component {
           <Route exact path="/" component={ HomePage } />
           <Route exact path="/donate" />
           <Route exact path="/about" />
-          <Route exact path="/contact" /> 
+          <Route exact path="/contact" />
+          <Route exact path="/anime-recommend" component={AnimeRecommend} />
         </div>
       </Router>
     );

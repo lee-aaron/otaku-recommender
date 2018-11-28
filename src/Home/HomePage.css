@@ -1,17 +1,33 @@
 .info {
     font-size: calc(10px + 2vmin);
-    color: rgb(203, 115, 230);
+    color: rgb(226, 197, 166);
+    padding: 7px;
+    font-size: 3em;
+    border: rgb(236, 230, 230) solid 2px;
+    border-radius: 5px;
 }
 
-.wrapper {
-    position: relative;
-    padding-top: 56.25%;
-    overflow: hidden;
-}
-
-.background-video {
+.home_page_content {
+    top: 50%;
+    left: 50%;
     position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.bg-img {
     top: 0;
     left: 0;
-    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+  
+.spacing {
+    margin: 15px;
+}
+
+#home_page {
+    background: none;
+    color: white;
 }
