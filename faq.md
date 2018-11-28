@@ -16,7 +16,7 @@ Content: If you are reporting a bug, please provide a screenshot of the stack tr
 
 ## Usage
 
-Temporary.
+Just input your MAL username and it will return a suggested list of anime for a user to watch.
 
 ## Requirements
 
