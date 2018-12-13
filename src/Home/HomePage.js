@@ -21,7 +21,7 @@ class HomePage extends Component {
 
         return (
             <div>
-                <img className="bg-img" src={Home} ></img>
+                <img className="bg-img" src={Home} alt="" />
                 <div className="home_page_content">
                     <h1 className="info spacing">{welcome}</h1>
                     <Button />

@@ -2,8 +2,8 @@
 
 ## Core Concept
 
-- Front End: Bootstrap, HTML, CSS, ReactJS
-- Back End: python
+- Front End: Bootstrap, HTML, CSS, React.js, Express.js
+- Back End: python, Flask, MySQL
 
 ## Database
 
