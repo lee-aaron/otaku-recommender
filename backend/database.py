@@ -14,11 +14,11 @@ class Database:
         # ALTER TABLE USERS CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
     def write(self, username, anime, score):
+        anime = anime.encode('utf-8')
+        anime = anime.replace('"', '\\"')
+        anime = anime.replace("'", "\\'")
         try:
-            if(type(anime) is str and anime.find('"') != -1):
-                self.cursor.execute("REPLACE INTO USERS VALUES ('{}','{}','{}')".format(username,anime,score))
-            else:
-                self.cursor.execute('REPLACE INTO USERS VALUES ("{}","{}","{}")'.format(username,anime,score))
+            self.cursor.execute('REPLACE INTO USERS VALUES ("{}","{}","{}")'.format(username,anime,score))
             self.db.commit()
         except Exception as e:
             print(e)

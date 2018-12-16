@@ -9,7 +9,8 @@ class AnimeRecommend extends Component {
     super();
 
     this.state = {
-      username: ''
+      username: '',
+      data: ""
     };
 
     this.sendQuery = this.sendQuery.bind(this);
@@ -25,6 +26,10 @@ class AnimeRecommend extends Component {
   sendQuery(e) {
     e.preventDefault();
 
+    this.setState({
+      data: ""
+    })
+
     let port = process.env.PORT || 5000;
     axios.get("http://localhost:" + port + "/recommend", {
       params: {
@@ -32,7 +37,9 @@ class AnimeRecommend extends Component {
       }
     })
       .then(res => {
-        console.log(res);
+        this.setState({
+          data: res.data
+        })
       })
       .catch(error => {
         console.error(error);
@@ -50,6 +57,24 @@ class AnimeRecommend extends Component {
             <input className="form-control mr-sm-2" placeholder="Bob" type="text" required autoComplete="off" onChange={this.handleChange} /><br />
             <button className="btn btn-success" type="submit">Recommend Me!</button>
           </form>
+          {
+            this.state && this.state.data !== "" && !this.state.data.includes("Error") &&
+            <table className="table">
+              <tbody>{this.state.data.map(function (item, key) {
+                return (
+                  <tr key={key}>
+                    <td>{item}</td>
+                  </tr>
+                )
+              })}</tbody>
+            </table>
+          }
+          {
+            this.state && this.state.data !== "" && this.state.data.includes("Error") &&
+            <div className="error">
+              There was an error with your input
+            </div>
+          }
         </div>
       </div>
     )

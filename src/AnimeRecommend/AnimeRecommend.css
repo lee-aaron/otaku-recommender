@@ -1,5 +1,5 @@
 .anime-recommend-content {
-  top: 50%;
+  top: 35%;
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -7,4 +7,16 @@
 
 .username {
   color: white;
+}
+
+.table {
+  color: white;
+  transform: translate(0%, 15px);
+  position: absolute;
+}
+
+.error {
+  color: red;
+  transform: translate(0%, 15px);
+  position: absolute;
 }

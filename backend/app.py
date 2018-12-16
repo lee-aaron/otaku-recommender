@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pymysql
 import pandas as pd
@@ -14,10 +14,12 @@ CORS(app)
 @app.route('/recommend')
 def getRecommendation():
   username = request.args.get('username')
-  print(username)
-  print(get_recommendation(username))
+  
+  username = username.encode('utf-8')
+  if username.count(';') > 0:
+      return "Username Error"
 
-  return "Got request"
+  return jsonify(get_recommendation(username))
 
 def get_top_n(predictions, n=10):
     '''Return the top-N recommendation for each user from a set of predictions.
@@ -52,6 +54,9 @@ def get_recommendation(user):
 
     df = pd.read_sql_query('SELECT * FROM USERS', conn)
 
+    if ( df.empty ):
+        return "Error - empty DF"
+
     conn.close()
 
     # Anime can be rated from 1 - 10
@@ -69,6 +74,9 @@ def get_recommendation(user):
 
     # Get top 15 predictions
     top_n = get_top_n(predictions, n=15)
+
+    if top_n.get(user) is None:
+        return "Error - cannot find User"
 
     return [iid for (iid, _) in top_n.get(user)]
     # print(user, [iid for (iid, _) in top_n.get(user)])

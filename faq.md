@@ -22,3 +22,7 @@ Just input your MAL username and it will return a suggested list of anime for a 
 
 - MyAnimeList account with at least 5 scored anime on your list (must be completed or in progress)
 - Default anime list background (we have trouble parsing the different anime list styles out there)
+
+## Running this on your own machine
+
+You will need the latest MySQL version, yarn, and ReactJS. Make sure your MySQL server is setup to use unicode. `CREATE DATABASE [name];` and `CREATE TABLE IF NOT EXISTS USERS (USERHASH VARCHAR(191), ANIME VARCHAR(191), SCORE INT(10), UNIQUE (USERHASH, ANIME));` are the necessary commands
